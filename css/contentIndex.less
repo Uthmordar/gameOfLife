@@ -1,0 +1,281 @@
+// CSS spécifique de l'index
+
+@font-size : 1.2em;
+@color-blue : #40B797;
+@light-grey : #EEE;
+@color-search : #CCC;
+@color-content : #222;
+@color-title : #202020;
+
+@bg-art-color : #0CC;
+@bg-sect-color : #EEE;
+@bg-input-color : #EEE;
+
+@font-family-default : Verdana, sans-serif;
+
+@margin : 1em;
+@padding : 0.5em;
+
+@width-wrapper	: 120em;
+
+#content{
+		color : @color-content;
+		margin : @margin;
+		padding : @padding;
+
+
+		//---------------------------------------------
+		// ZONE ARTICLE
+		//-------------------------------------------
+
+		section{
+			background-color : @bg-sect-color;
+			width : 70%;
+			float : left;
+			margin-right : 1.2*@margin;
+			min-height : 48.5em;
+			border : 1px solid @color-content;
+			border-radius : 5px;
+
+
+			//------------------------------------------
+			// ARTICLE
+			//-------------------------------------------
+
+			article{
+				margin : @margin;
+				padding : @padding;
+				background-color : lighten(@bg-art-color, 20%);
+				box-shadow : 0.1em 0.1em 0.3em 0.2em ;
+				border-radius : 5px;
+
+				h2{
+					font-size : 2*@font-size;
+					margin : 0.1*@margin;
+					padding : 0.1*@padding;
+				}
+
+				.infoTop{
+					margin-left : 2*@margin;
+					font-style : italic;
+				}
+
+				.excerpt{
+					font-size : @font-size;
+					margin : 0.2*@margin;
+					padding : 0.2*@padding;
+					line-height : @font-size;
+				}
+			}
+		}
+
+
+		//----------------------------------------------
+		// ASIDE
+		//-------------------------------------------------
+
+		aside{
+			background-color : @light-grey;
+			width : 28%;
+			float : left;
+			min-height : 48.5em;
+			border : 1px solid @color-content;
+			border-radius : 5px;
+
+
+			//------------------------------------------------
+			// WIDGET
+			//--------------------------------------------------------
+			
+			.widget{
+				margin : @margin auto;
+				padding : @padding;
+				width : 90%;
+				border-radius : 5px;
+				box-shadow : 0.1em 0.1em 0.2em 0.1em ;
+
+				h4{
+					font-size : 1.4*@font-size;
+					margin : 0.1*@margin;
+					padding : 0.1*@padding;
+				}
+
+				ul{
+					margin-left : 1.5*@margin;
+
+					a{
+						li{
+							font-size : 1.2*@font-size;
+							padding : 0.2*@padding;
+						}
+
+						&:hover{
+							color : aqua;
+						}
+					}
+				}
+
+				form{
+
+					#WidSearch{
+						color : @color-search;
+						border : 1px solid black;
+						margin-left : @margin;
+						font-size : @font-size;
+						padding-left : @padding;
+						background-color : @bg-input-color;
+					}
+
+					.subWid {
+						width : 5em;
+						border-radius : 5px;
+						color: #F2E4E4;
+						text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+						background-color: #0B3038;
+						*background-color: #0B3038;
+						background-image: -moz-linear-gradient(top, #13C47D, 				#0B3038);
+						background-image: -webkit-gradient(linear, 0 0, 0 100%, 				from(#13C47D), to(#0B3038));
+						background-image: -webkit-linear-gradient(top, #13C47D, 				#0B3038);
+						background-image: -o-linear-gradient(top, 	#13C47D, #0B3038);
+						background-image: linear-gradient(to bottom, #13C47D, 	#0B3038);
+						background-repeat: repeat-x;
+						border-color: #0B3038;
+						border-color: rgba(0, 0, 0, 0.1) rgba(0, 	0, 0, 0.1) rgba(0, 0, 0, 0.25);
+						filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#13C47D', endColorstr='#0B3038', GradientType=0);
+						filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+					}
+					.subWid:hover,
+					.subWid:active,
+					.subWid.active,
+					.subWid.disabled,
+					.subWid[disabled] {
+						color: #FFFFFF;
+						background-color: #0B3038;
+						*background-color: #003bb3;
+					}
+				}
+			}
+
+			.W1{
+				background-color : #DDD;
+			}
+
+			.W2{
+				background-color : #CCC;
+			}
+
+			.W3{
+				background-color : #BBB;
+			}
+
+		}
+
+	}
+
+
+	//---------------------------------------------------
+	// RESPONSIVE
+	//---------------------------------------------------
+
+
+	@media all and (max-width: 1200px) {
+		#content{
+			margin : 0.5*@margin;
+			padding : 0.5*@padding;
+
+			section{
+				width : 95%;
+				float : none;
+				margin : 0.5*@margin auto;
+
+				article{
+					margin : 2*@margin;
+					padding : 2*@padding;
+
+					h2{
+						font-size : 2.4*@font-size;
+					}
+
+					.infoTop{
+						margin-left : 2.2*@margin;
+					}
+
+					.excerpt{
+						font-size : 1.2*@font-size;
+						line-height : 1.2*@font-size;
+					}
+				}
+			}
+
+			aside{
+				width : 95%;
+				float : none;
+				margin : 2*@margin auto;
+				padding : 2*@padding;
+				min-height : 15em;
+
+				.widget{
+					margin : 2*@margin;
+					padding : 2*@padding;
+					width : 25%;
+					float : left;
+
+					h4{
+						font-size : 1.6*@font-size;
+						margin : 0.2*@margin;
+						padding : 0.2*@padding;
+					}
+
+					ul{
+						a{
+							li{
+								font-size : 1.4*@font-size;
+							}
+						}
+					}
+
+					form{
+
+						#WidSearch{
+							font-size : 1.2*@font-size;
+						}
+
+						.subWid {
+							width : 6em;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media all and (max-width : 1100px){
+		#wrapper{
+			font-size : @font-size;
+			width : 100%;
+
+			#content aside .widget{
+				width : 23%;
+
+
+				form #WidSearch{
+					width : 80%;
+					margin : @margin auto;
+				}
+			}
+		}
+	}
+
+	@media all and (max-width : 1000px){
+		#wrapper{
+			width : 1000px;
+		}
+	}
+
+	@media all and (min-width : 1400px){
+		#content section article p{
+			-moz-column-count:2; /* Firefox */
+			-webkit-column-count:2; /* Safari and Chrome */
+			column-count:2;
+		}
+	}

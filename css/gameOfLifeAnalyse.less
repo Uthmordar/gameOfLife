@@ -1,0 +1,225 @@
+// CSS spécifique de l'index
+
+@font-size : 1.2em;
+@color-blue : #40B797;
+@light-grey : #EEE;
+@color-search : #CCC;
+@color-content : #222;
+@color-title : #202020;
+@color-error : #984444;
+
+@bg-art-color : #0CC;
+@bg-sect-color : #EEE;
+@bg-input-color : #EEE;
+
+@font-family-default : Verdana, sans-serif;
+
+@margin : 1em;
+@padding : 0.5em;
+
+@width-wrapper	: 120em;
+
+#content{
+	color : @color-content;
+	margin : @margin;
+	padding : @padding;
+
+	//-----------------------------------------------------------
+	// ARTICLE
+	//------------------------------------------------------
+
+	article{
+		background-color : @bg-sect-color;
+		box-shadow : 0.2em 0.2em 0.4em 0.2em;
+		border-radius : 5px;
+
+		h2{
+			font-size : 3.6*@font-size;
+			margin : 0.2*@margin;
+			padding : 0.2*@padding;
+		}
+
+
+		#thumbnail{
+			width : 14em;
+			height : 16em;
+			background-color : #555;
+			float : left;
+			margin : 2*@margin @margin 0;
+			border : 2px double black;
+		}
+
+		#contenu{
+			margin : @margin;
+			padding : @padding;
+
+			h3{
+				font-size : 2.4*@font-size;
+				margin : 0.2*@margin;
+				padding : 0.2*@padding;
+			}
+
+			p{
+				font-size : 1.2*@font-size;
+				line-height : 1.2*@font-size;
+				margin : 0.2*@margin;
+				padding : 0.2*@padding;
+
+				img{
+					display : block;
+					margin : 0.3*@margin auto;
+				}
+			}
+
+			ul{
+				margin-left : 4*@margin;
+
+				li{
+					font-size : 1.1*@font-size;
+					font-style : italic;
+					padding : 0.5*@padding;
+
+					li{
+						font-size : 0.85*@font-size;
+						font-style : italic;
+						padding : 0.5*@padding;
+					}
+				}
+			}
+
+			#zoneGraph{	
+				width : 97%;
+				margin : @margin auto;
+				padding : 2*@padding;
+				padding-bottom : 4*@padding;
+				position : relative;
+
+				.ord{
+					border-top : 1px solid black;
+					width : @margin;
+					height : @margin;
+					position : absolute;
+				}
+
+				.abs{
+					border-right : 1px solid black;
+					width : @margin;
+					height : @margin;
+				}
+
+				h3{		
+					font-size : 2.4*@font-size;
+					margin : 0.5*@margin;
+					padding : 0.5*@padding;
+				}
+
+				#ord{
+					width : 1.5em;
+					height : 36em;
+					display : inline-block;
+					position : relative;
+					margin-left : 3*@margin;
+
+					div{
+						width : 1.5em;
+						height : 3.5em;
+						border-top : 1px solid black;
+						position : absolute;
+					}
+				}
+
+				#graph{
+					width : 94em;
+					height : 48em;
+					display : inline-block;
+					margin-top : @margin;
+					border-left : 1px solid black;
+					border-bottom : 1px solid black;
+				}
+
+				#abs{
+					width : 96em;
+					height : 1.5em;
+					position : relative;
+					margin-left : 3*@margin;
+
+					div{
+						width : 3em;
+						height : 1.5em;
+						border-left : 1px solid black;
+						position : absolute;
+					}
+				}
+
+				#reg{
+					width : 95em;
+					height : 0.2em;
+					background-color : red;
+					opacity : 0.3;
+					position : absolute;
+					left: 5*@margin;
+					bottom : 13*@margin;
+					transform:rotate(-11.6deg);
+					-ms-transform:rotate(-11.6deg);
+					-webkit-transform:rotate(-11.6deg);
+					-moz-transform:rotate(-11.6deg);
+
+					p{
+						width : 14*@margin;
+						margin : 0 auto;
+						color : white;
+					}
+				}
+
+				#curve1{
+					width : 48em;
+					height : 0.2em;
+					background-color : teal;
+					opacity : 0.3;
+					position : absolute;
+					left : 4*@margin;
+					bottom : 13*@margin;
+					transform:rotate(-24deg);
+					-ms-transform:rotate(-24deg);
+					-webkit-transform:rotate(-24deg);
+					-moz-transform:rotate(-24deg);
+
+					p{
+						width : 12*@margin;
+						margin : auto;
+						color : white;
+					}
+				}
+
+				#curve2{
+					width : 34em;
+					height : 0.2em;
+					background-color : teal;
+					opacity : 0.3;
+					position : absolute;
+					left : 62*@margin;
+					bottom : 43*@margin;
+					transform:rotate(-26deg);
+					-ms-transform:rotate(-26deg);
+					-webkit-transform:rotate(-26deg);
+					-moz-transform:rotate(-26deg);
+
+					p{
+						width : 12*@margin;
+						margin : auto;
+						color : white;
+					}
+				}
+			}
+
+			#zoneExpl{
+				width : 90%;
+				margin : @margin auto;
+
+				h4{
+					font-size : 1.8*@font-size;
+				}
+			}
+		}
+	}
+}

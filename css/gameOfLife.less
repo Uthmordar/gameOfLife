@@ -1,0 +1,417 @@
+// CSS spécifique de l'index
+
+@font-size : 1.2em;
+@color-blue : #40B797;
+@light-grey : #EEE;
+@color-search : #CCC;
+@color-content : #222;
+@color-title : #202020;
+@color-error : #984444;
+
+@bg-art-color : #0CC;
+@bg-sect-color : #EEE;
+@bg-input-color : #EEE;
+
+@font-family-default : Verdana, sans-serif;
+
+@margin : 1em;
+@padding : 0.5em;
+
+@width-wrapper	: 120em;
+
+.errorRed{
+	color : @color-error;
+	font-size : 1.2*@font-size;
+	font-weight : bold;
+}
+
+section{
+		background-color : @bg-sect-color;
+		color : @color-content;
+		padding : @padding;
+
+
+		//---------------------------------------------
+		// ZONE CONTENU STATIQUE
+		//-------------------------------------------
+
+
+		#contentStat{
+			background-color : darken(@bg-sect-color, 4%);
+			width : 97%;
+			margin : @margin auto;
+			border : 1px solid @color-content;
+			border-radius : 5px;
+
+			#infoGame, #rules, #background{
+				width : 95%;
+				background-color : darken(@bg-sect-color, 10%);
+				border : 1px solid darken(@bg-sect-color, 20%);
+				margin : @margin auto;
+				padding : @padding;
+				border-radius : 5px;
+				position : relative;
+
+				.fleche{
+					width : 0;
+					height : 0;
+					border : 9px solid transparent;
+					border-bottom: 9px solid black;
+					position : absolute;
+					right : 3em;
+					top : 1.3em;
+					cursor : pointer;
+				}
+
+				h2{
+					font-size : 1.8*@font-size;
+					margin : 0.5*@margin;
+					padding : 0.5*@padding;
+					cursor : pointer;
+				}
+
+				p{
+					font-size : 1.2*@font-size;
+					margin : 0.2*@margin;
+					padding : 0.2*@padding;
+				}
+
+				a{
+					font-style : italic;
+					color : @color-blue;
+				}
+
+				ul{
+					margin-left : 4*@margin;
+
+					li{
+						font-size : 1.2*@font-size;
+						font-style : italic;
+						padding : 0.3*@padding;
+					}
+				}
+
+				.replicImg{
+						position : absolute;
+				}
+			}
+
+			#infoGame{
+
+				a{
+					font-size : 1.3*@font-size;
+					float : right;
+					padding : 0.2*@padding;
+					margin : 0.2*@margin;
+				}
+			}
+
+			#gameNav{
+				width : 76%;
+				margin : @margin auto;
+
+				#rand, >input, #Mode{
+					display : inline-block;
+					margin : @margin;
+					padding : @padding;
+				}
+
+				#rand, #Mode{
+					min-height : 10*@margin;
+					width : 19.5em;
+
+					label{
+						font-size : 1.1*@font-size;
+					}
+				}
+
+				#Mode{
+					label{
+						padding-left : 3*@padding;
+					}
+				}
+
+				input{
+					margin : 0.3*@margin;
+					padding : 0.3*@padding;
+
+					&[type='text']{
+						text-align : center;
+						width : 6*@margin;
+						color : darken(@color-search, 20%);
+						border : 1px solid black;						background-color : @bg-input-color;
+					}
+
+					&[type='button']{
+						margin : 0.3*@margin @margin;
+						cursor : pointer;
+						width : 8em;
+						font-size : 1.3*@font-size;
+						border-radius : 5px;						color: #F2E4E4;
+						text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+						background-color: #0B3038;
+						*background-color: #0B3038;
+						background-image: -moz-linear-gradient(top, #13C47D, 				#0B3038);
+						background-image: -webkit-gradient(linear, 0 0, 0 100%, 				from(#13C47D), to(#0B3038));
+						background-image: -webkit-linear-gradient(top, #13C47D, 				#0B3038);				background-image: -o-linear-gradient(top, 	#13C47D, #0B3038);
+						background-image: linear-gradient(to bottom, #13C47D, 	#0B3038);
+						background-repeat: repeat-x;
+						border-color: #0B3038;
+						border-color: rgba(0, 0, 0, 0.1) rgba(0, 	0, 0, 0.1) rgba(0, 0, 0, 0.25);
+						filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#13C47D', endColorstr='#0B3038', GradientType=0);
+						filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+					}
+
+					&[type='button']:hover{
+						color: crimson;
+						background-color: #0B3038;
+						*background-color: #003bb3;
+					}
+
+					&[name='load']{
+						margin-left : 5*@margin;
+					}
+				}
+			}
+		}
+
+
+		//------------------------------------------
+		// ZONE D'AFFICHAGE DU PATTERN ET CONTROLES			
+		//-------------------------------------------
+
+
+		#displayArea{
+			width : 97%;
+			margin : @margin auto;				
+			background-color : darken(@bg-sect-color, 4%);
+			border : 1px solid @color-content;
+			border-radius : 5px;
+			min-height : 50em;
+
+
+			//---------------------------------------
+			// PATTERN INITIAL
+			//---------------------------------------
+
+
+			#patternArea{
+				width : 61%;
+				background-color : darken(@bg-sect-color, 10%);
+				border : 1px solid darken(@bg-sect-color, 20%);
+				margin : @margin @margin @margin 2*@margin;
+				padding : @padding;
+				border-radius : 5px;
+				float : left;
+
+				h2{
+					font-size : 2*@font-size;
+					margin : 0.1*@margin;
+					padding : 0.1*@padding;
+				}
+
+				#initialPattern{
+					margin : @margin auto;
+					box-shadow : 1px 1px 2px 3px darken(@bg-sect-color, 60%);
+
+					//on determine la taille de la zone de dessin qui va modifier tous 
+					//les paramètres de l'algorithme.
+
+					width : 66em;
+					height : 50em;
+
+					.cell{
+						float : left;
+						background-color : #EEE;
+						width : 10px;
+						height : 10px;
+
+						&[data-phen='phen1']{
+							background : url('../images/phen1.png');
+						}
+
+						&[data-phen='phen2']{
+							background : url('../images/phen2.png');
+						}
+					}
+				}
+			}
+
+
+			//--------------------------------------------
+			// CONTROLS AREA
+			//--------------------------------------------
+
+
+			#controlArea{
+				width : 32%;
+				background-color : darken(@bg-sect-color, 10%);
+				border : 1px solid darken(@bg-sect-color, 20%);
+				margin : @margin;
+				padding : @padding;
+				border-radius : 5px;
+				float : left;
+
+				h2{
+					font-size : 1.8*@font-size;
+					margin : 0.2*@margin;
+					padding : 0.2*@padding;
+				}
+
+				#cont1, #cont2{
+					border-radius : 5px;
+					background-color : darken(@bg-sect-color, 20%);
+					border : 1px solid darken(@bg-sect-color, 30%);
+					margin : 0.8*@margin;
+					padding : 0.8*@padding;
+
+					h3{
+						font-size : 1.4*@font-size;
+						margin : 0.3*@margin;
+						padding : 0.3*@padding;
+						text-decoration : underline;
+					}
+
+					p{
+						margin : 0.2*@margin;
+						padding : 0.2*@padding;
+						font-size : 1.2*@font-size;
+					}
+
+					label{
+						font-size : 1.2*@font-size;
+					}
+
+					input{
+						margin : 0.3*@margin;
+						padding : 0.3*@padding;
+
+						&[type='text']{
+							text-align : center;
+							margin : 0.3*@margin 0.8*@margin;
+							width : 5*@margin;
+							color : darken(@color-search, 20%);
+							border : 1px solid black;						background-color : @bg-input-color;
+						}
+
+						&[type='button']{
+							margin : 0.3*@margin 0.8*@margin;
+							cursor : pointer;
+							min-width : 6em;
+							font-size : 1.2*@font-size;
+							border-radius : 5px;		
+							color: #F2E4E4;
+							text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+							background-color: #0B3038;
+							*background-color: #0B3038;
+							background-image: -moz-linear-gradient(top, #13C47D, 				#0B3038);
+							background-image: -webkit-gradient(linear, 0 0, 0 100%, 				from(#13C47D), to(#0B3038));
+							background-image: -webkit-linear-gradient(top, #13C47D, 				#0B3038);				background-image: -o-linear-gradient(top, 	#13C47D, #0B3038);
+							background-image: linear-gradient(to bottom, #13C47D, 	#0B3038);
+							background-repeat: repeat-x;
+							border-color: #0B3038;
+							border-color: rgba(0, 0, 0, 0.1) rgba(0, 	0, 0, 0.1) rgba(0, 0, 0, 0.25);
+							filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#13C47D', endColorstr='#0B3038', GradientType=0);
+							filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+						}
+
+						&[type='button']:hover{
+							color: crimson;
+							background-color: #0B3038;
+							*background-color: #003bb3;
+						}
+
+						&[name='ite']{
+							width : 10*@margin;
+						}
+					}
+				}
+			}
+
+
+			//------------------------------------------
+			// GENERATIONS DISPLAY
+			//-------------------------------------------
+
+			
+			#patternGen{
+				width : 97.5%;
+				background-color : darken(@bg-sect-color, 10%);
+				border : 1px solid darken(@bg-sect-color, 20%);
+				margin : @margin auto;
+				padding : @padding @padding 3*@padding;
+				border-radius : 5px;
+				position : relative;
+
+				h2{
+					font-size : 2*@font-size;
+					margin : 0.1*@margin;
+					padding : 0.1*@padding;
+				}
+
+				#generationPattern{
+					margin : @margin auto;
+					box-shadow : 1px 1px 2px 3px darken(@bg-sect-color, 60%);
+					width : 1.7*66em;
+					height : 1.7*50em;
+				}
+
+				#hiddenControl{
+
+					position : absolute;
+					bottom : 0;
+					left : 0;
+					background-color : @bg-art-color;
+
+					p{
+						font-size : 1.3*@font-size;
+						margin : 0.2*@margin;
+						padding : 0.2*@padding;
+					}
+
+					input{
+						margin : 0.3*@margin;
+						padding : 0.3*@padding;
+						display : inline-block;
+
+						&[type='button']{
+							margin : 0.3*@margin 0.8*@margin;
+							cursor : pointer;
+							min-width : 6em;
+							font-size : 1.2*@font-size;
+							border-radius : 5px;		
+							color: #F2E4E4;
+							text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+							background-color: #0B3038;
+							*background-color: #0B3038;
+							background-image: -moz-linear-gradient(top, #13C47D, 				#0B3038);
+							background-image: -webkit-gradient(linear, 0 0, 0 100%, 				from(#13C47D), to(#0B3038));
+							background-image: -webkit-linear-gradient(top, #13C47D, 				#0B3038);				background-image: -o-linear-gradient(top, 	#13C47D, #0B3038);
+							background-image: linear-gradient(to bottom, #13C47D, 	#0B3038);
+							background-repeat: repeat-x;
+							border-color: #0B3038;
+							border-color: rgba(0, 0, 0, 0.1) rgba(0, 	0, 0, 0.1) rgba(0, 0, 0, 0.25);
+							filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#13C47D', endColorstr='#0B3038', GradientType=0);
+							filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+						}
+
+						&[type='button']:hover{
+							color: crimson;
+							background-color: #0B3038;
+							*background-color: #003bb3;
+						}
+					}
+				}
+
+				a{ float : right;
+					font-size : 1.2*@font-size;
+					color : @color-blue;
+				}
+			}
+		}
+	}
+
+	//---------------------------------------------------
+	// RESPONSIVE
+	//---------------------------------------------------
+

@@ -1,0 +1,172 @@
+// CSS pour le header des pages du site
+
+@font-size : 1.2em;
+@color-blue : #40B797;
+@light-grey : #EEE;
+@color-search : #CCC;
+@color-content : #222;
+@color-title : #202020;
+@color-banner : #036;
+
+@bg-art-color : #0CC;
+@bg-sect-color : #EEE;
+@bg-input-color : #EEE;
+
+@font-family-default : Verdana, sans-serif;
+
+@margin : 1em;
+@padding : 0.5em;
+
+@width-wrapper	: 120em;
+
+header{
+		height : 30em;
+		position : relative;
+		padding-top : @padding*2; 
+
+
+		//--------------------------------------------------
+		// ZONE TITRE
+		//-------------------------------------------------
+
+
+		#head{
+			height : 12em;
+			position : relative;
+
+			a{
+				position : absolute;
+
+				#logo{
+					margin : 2*@margin 0 0 5*@margin;
+
+					#titreSite{
+						font-size: 3.4*@font-size;
+						color : @color-title;
+					}
+
+					#ssTitre{
+						font-size : 1.4*@font-size;
+						color : lighten(@color-title, 20%);
+						font-style : italic;
+					}
+				}
+			}
+
+
+			//------------------------------------------------
+			// ZONE DE RECHERCHE HEADER
+			//-------------------------------------------------
+
+
+			#search{
+				position : absolute;
+				right : 0;
+				bottom : 0;
+				margin-right : @margin;
+				margin-bottom : @margin;
+
+				#searchHead{
+					color : @color-search;
+					border : 2px solid #444;
+					padding-left : @padding;
+					font-size : @font-size;
+					background-color : @bg-input-color;
+
+				}
+
+				.subHead {
+					width : 5em;
+					border-radius : 5px;
+					color: #F2E4E4;
+					text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+					background-color: #0B3038;
+					*background-color: #0B3038;
+					background-image: -moz-linear-gradient(top, #13C47D, 				#0B3038);
+					background-image: -webkit-gradient(linear, 0 0, 0 100%, 				from(#13C47D), to(#0B3038));
+					background-image: -webkit-linear-gradient(top, #13C47D, 				#0B3038);
+					background-image: -o-linear-gradient(top, #13C47D, #0B3038);
+					background-image: linear-gradient(to bottom, #13C47D, 	#0B3038);
+					background-repeat: repeat-x;
+					border-color: #0B3038;
+					border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+					filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#13C47D', endColorstr='#0B3038', GradientType=0);
+					filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+				}
+				.subHead:hover,
+				.subHead:active,
+				.subHead.active,
+				.subHead.disabled,
+				.subHead[disabled] {
+					color: #FFFFFF;
+					background-color: #0B3038;
+					*background-color: #003bb3;
+				}
+			}
+		}
+
+
+		//------------------------------------------------
+		// BANNER
+		//-----------------------------------------------
+
+
+		#banner{
+			height : 18.5em;
+			background-color : @color-banner;
+			position : relative;
+
+			#menuHead{
+				position : absolute;
+				bottom : 0;
+				background-color : #111;
+				height : 4em;
+				width : @width-wrapper;
+
+				.currentNav{
+						color : crimson;
+				}
+
+				ul{
+					margin-left : 2*@margin;
+
+					>li{
+						color : white;
+						float : left;
+						margin : 0.2*@margin 0.2*@margin;
+						padding : @padding;
+						text-align : center;
+						font-size : 1.3*@font-size;
+						position : relative;
+
+						&:hover{
+							background-color : teal;
+						}
+
+						ul{
+							position : absolute;
+							top : 2em;
+							left : -2em;
+							z-index : 1000;
+
+							li{
+								background-color : #23D578;
+								padding : @padding;
+								font-size : 0.8*@font-size;
+								text-align : center;
+								min-width : 8.2em;
+								border-top : 0.5px solid black;
+
+								&:hover{
+									background-color : teal;
+								}
+							}
+						}
+					}
+				}
+
+			}
+
+		}
+
+	}

@@ -1,0 +1,66 @@
+//CSS pour le footer du site
+
+@font-size : 1.2em;
+@color-blue : #40B797;
+@light-grey : #EEE;
+@color-search : #CCC;
+@color-content : #222;
+@color-title : #202020;
+
+@bg-art-color : #0CC;
+@bg-sect-color : #EEE;
+@bg-input-color : #EEE;
+
+@font-family-default : Verdana, sans-serif;
+
+@margin : 1em;
+@padding : 0.5em;
+
+@width-wrapper	: 120em;
+
+	
+	footer{
+		background-color : #EEE;
+		min-height : 10em;
+		position : relative;
+		border-top : 2px double black;
+
+		#menuFoot{
+			position : absolute;
+			top : 4.2em;
+			left : 35%;
+
+			ul{
+
+				a{
+					display : inline-block;
+					border-right : 1px solid black;
+					text-align : center;
+					min-width : 10em;
+					padding : 0 @padding;
+					font-size : 1.2*@font-size;
+					text-decoration : underline;
+
+					&:last-child{
+						border-right : 0 solid black;
+					}
+
+					&:hover{
+						color : #555;
+					}
+				}	
+			}	
+		}
+
+		#info{
+			position : absolute;
+			left : 40%;
+			top : 5em;
+
+			p{
+				margin : @margin;
+				padding : @padding;
+				font-size : 1.2*@font-size;
+			}
+		}
+	}

@@ -1,0 +1,61 @@
+//CSS pour le wrapper et les éléments généraux de notre site
+
+
+@font-size : 1.2em;
+@color-blue : #40B797;
+@light-grey : #EEE;
+@color-search : #CCC;
+@color-content : #222;
+@color-title : #202020;
+
+@bg-art-color : #0CC;
+@bg-sect-color : #EEE;
+@bg-input-color : #EEE;
+
+@font-family-default : Verdana, sans-serif;
+@font-size-default : 10px;
+@bg-body-color : lighten(#0CC, 45%);
+
+@margin : 1em;
+@padding : 0.5em;
+
+@width-wrapper	: 120em;
+
+//---------------------------------------
+//Rules
+//--------------------------------------
+
+p:first-letter, li:first-letter{
+	padding-left : @font-size;
+}
+
+
+body{
+	font-size	: @font-size-default;
+	font-family	: @font-family-default;
+	background-color : @bg-body-color;
+}
+
+p::selected{color: red;}
+
+a{
+	text-decoration : none;
+	color : inherit;
+}
+
+.blue{
+	color : @color-blue;
+}
+
+.bold{
+	font-weight : bold;
+}
+
+.clear{clear : both;}
+
+#wrapper{
+	width : @width-wrapper;
+	margin : @margin auto;
+	background-color : #FFF;
+	border : 1px solid #333;
+}
